@@ -1,0 +1,17 @@
+DEPLOYING THE APP ON HEROKU
+================================
+1. Make a ML model.In our folder code is under (model.py)
+2. Dump the model in pickle. So that we can use it.(Done in model.py)
+3. Use Flask framework to bundle your code into an app(All code in app.py)
+4. Procfile --> Define the web service to run on heroku(Make sure it doesn't have txt extension)
+5. Requirements.txt --> Since Heroku is PaaS so we don't need to give OS runtime and all. This txt file will be telling the heroku
+                        to install all the required things to run this app.
+6. Heroku.com
+	a) Login
+	b) There will be an option to create an app under new at top right bottom
+	c) Give app name
+	d) Give app name, region can be US and click on create app
+	e) Now you can connect app to github repo branch
+	f) Now Manually deploy it
+	g) Check if it is running fine
+	h) If not,then use heroku CLI to check for logs (1. heroku login 2. heroku logs --app <app_name>
