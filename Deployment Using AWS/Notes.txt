@@ -1,0 +1,19 @@
+DEPLOYMENT USING AWS
+=======================
+1. Make a ML model.In our folder code is under (model.py)
+2. Dump the model in pickle. So that we can use it.(Done in model.py)
+3. Use Flask framework to bundle your code into an app(All code in app.py)
+5. Requirements.txt --> This txt file will be used to install all the required things to run this app.
+6. AWS
+	a) Login to AWS console
+	b) Create a new EC2 instance(ubuntu) or use existing one
+	c) Make sure to download the key pair (.pem file)
+	d) Use puttygen to convert this .pem to ppk file
+	e) For Instance add a Security group--> Inbound rule to allow all traffic. In Security Interface add this group to instance
+	e) Connct Putty, Get instance name and provide the .ppk file
+	f) Use WINSCP to tranfer required files. Use .ppk file and instancename to connect.
+	g) In putty give username as ubuntu and while logging in type the same user name
+	h) run in putty 1. sudo apt-get update && sudo apt-get install python3-pip (To update pip3)
+	i) 2. pip3 install -r requirements.txt (To install all required libraries)
+	j) python3 app.py (Your app will start running on 8080 as mentioned in app.py
+	k) <instance_name>:8080 (Your app will be running on this link)
